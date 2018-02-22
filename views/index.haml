@@ -1,120 +1,157 @@
 !!!
 %html
   %head
-    %title My Sinatra Website
+    %title Bug Schedule
     %link(rel="stylesheet" href="http://yui.yahooapis.com/2.8.0r4/build/reset/reset-min.css")
     %link(rel="stylesheet" href="css/styles.css")
   %body
-    #wrapper
-      #header
-        %h1 My Sinatra Website
-        %h2 A Simple Site made with Sinatra and HAML!
+    %h1.title
+      Bug Schedule
 
-      #content
-        %h1 The Home Page
-        %p
-          Welcome to my website made with Sinatra and HAML.
-        %p
-          This is the home page and this is some text to fill out the home page!
-
-      #calander
-        %table
-          %tr
-            %th
+    %div.calander
+      %div.monthBar
+        %a#previousMonth
+          Previous
+        %h1#currentMonth
+          Month
+        %a#nextMonth
+          Next
+      %table
+        %tr#days
+          %th
+            %div.day
               Su
-            %th
+          %th
+            %div.day
               Mo
-            %th
+          %th
+            %div.day
               Tu
-            %th
+          %th
+            %div.day
               We
-            %th
+          %th
+            %div.day
               Th
-            %th
+          %th
+            %div.day
               Fr
-            %th
+          %th
+            %div.day
               Sa
-          %tr
-            %th
+        %tr#row1
+          %td
+            %div.content#1.1
               0
-            %th
+          %td
+            %div.content#1.1
               0
-            %th
+          %td
+            %div.content#1.1
               0
-            %th
+          %td
+            %div.content#1.1
               0
-            %th
+          %td
+            %div.content#1.1
               0
-            %th
+          %td
+            %div.content#1.1
               0
-            %th
+          %td
+            %div.content#1.1
               0
-          %tr
-            %th
+        %tr#row2
+          %td
+            %div.content#2.1
               0
-            %th
+          %td
+            %div.content#2.1
               0
-            %th
+          %td
+            %div.content#2.1
               0
-            %th
+          %td
+            %div.content#2.1
               0
-            %th
+          %td
+            %div.content#2.1
               0
-            %th
+          %td
+            %div.content#2.1
               0
-            %th
+          %td
+            %div.content#2.1
               0
-          %tr
-            %th
+        %tr#row3
+          %td
+            %div.content#3.1
               0
-            %th
+          %td
+            %div.content#3.1
               0
-            %th
+          %td
+            %div.content#3.1
               0
-            %th
+          %td
+            %div.content#3.1
               0
-            %th
+          %td
+            %div.content#3.1
               0
-            %th
+          %td
+            %div.content#3.1
               0
-            %th
+          %td
+            %div.content#3.1
               0
-          %tr
-            %th
+        %tr#row4
+          %td
+            %div.content#4.1
               0
-            %th
+          %td
+            %div.content#4.1
               0
-            %th
+          %td
+            %div.content#4.1
               0
-            %th
+          %td
+            %div.content#4.1
               0
-            %th
+          %td
+            %div.content#4.1
               0
-            %th
+          %td
+            %div.content#4.1
               0
-            %th
+          %td
+            %div.content#4.1
               0
-          %tr
-            %th
+        %tr#row5
+          %td
+            %div.content#5.1
               0
-            %th
+          %td
+            %div.content#5.1
               0
-            %th
+          %td
+            %div.content#5.1
               0
-            %th
+          %td
+            %div.content#5.1
               0
-            %th
+          %td
+            %div.content#5.1
               0
-            %th
+          %td
+            %div.content#5.1
               0
-            %th
+          %td
+            %div.content#5.1
               0
 
-      #side_bar
-        %h1 Side Bar
-        %p
-          This is the side bar of the webpage
-
-      #footer
-        %p
-          This is the footer.
+    #side_bar
+      %h1 Side Bar
+      %p
+        This is the side bar of the webpage
+    %script(src="scripts/myscript.js")

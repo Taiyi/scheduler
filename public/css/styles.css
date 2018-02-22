@@ -1,4 +1,63 @@
-#wrapper{
-    width:66%;
-    margin:auto;
+.title {
+    text-align: center;
+    font-size: 175%;
+    font-weight: bold;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+}
+
+.day {
+    font-weight: bold;
+    text-align: center;
+}
+
+#previousMonth {
+    float: left;
+    width: 32%;
+    text-align: left;
+    padding-left: 10px;
+}
+
+#currentMonth {
+    float: left;
+    text-align: center;
+    font-size: 125%;
+    font-weight: bold;
+    width: 32%;
+    padding-bottom: 5px;
+
+}
+
+#nextMonth {
+    float: right;
+    text-align: right;
+    width: 32%;
+    padding-right: 10px;
+}
+
+.calander {
+  width: 40vw;
+  margin: auto;
+}
+
+table {
+  width: 40vw;
+}
+th, td {
+  width: 14%;
+  position: relative;
+  border: 1px solid black;
+}
+td:after {
+  content: '';
+  display: block;
+  margin-top: 100%;
+}
+td .content {
+  position: absolute;
+  padding: 10% 0% 0% 10%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
