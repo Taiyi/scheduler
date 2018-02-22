@@ -35,19 +35,26 @@
     padding-right: 10px;
 }
 
-.calander {
+.main {
   width: 40vw;
   margin: auto;
 }
 
-table {
+.calander {
   width: 40vw;
 }
-th, td {
+.calander th, .calander td {
   width: 14%;
   position: relative;
   border: 1px solid black;
 }
+
+.scheduledEngineer th .scheduledEngineer td {
+  width: 14%;
+  position: relative;
+  border: 1px solid black;
+}
+
 td:after {
   content: '';
   display: block;

@@ -8,7 +8,7 @@
     %h1.title
       Bug Schedule
 
-    %div.calander
+    %div.main
       %div.monthBar
         %a#previousMonth(href='#')
           Previous
@@ -16,8 +16,8 @@
           Month
         %a#nextMonth(href='#')
           Next
-      %table
-        %tr#days
+      %table.calander
+        %tr
           %th
             %div.day
               Su
@@ -39,7 +39,7 @@
           %th
             %div.day
               Sa
-        %tr#row0
+        %tr#row0s#mainrow
           %td
             %div.content#0x0
               0
@@ -149,6 +149,31 @@
           %td
             %div.content#4x6
               0
+      %table.scheduledEngineer
+        %th
+          %td
+            %div.day
+              Assigned Engineer
+        %tr
+          %td
+            %div.content#e0
+              Name
+        %tr
+          %td
+            %div.content#e1
+              Name
+        %tr
+          %td
+            %div.content#e2
+              Name
+        %tr
+          %td
+            %div.content#e3
+              Name
+        %tr
+          %td
+            %div.content#e4
+              Name
     #side_bar
       %h1 Side Bar
       %p
