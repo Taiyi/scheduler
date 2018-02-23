@@ -8,14 +8,54 @@
     %h1.title
       Bug Schedule
 
+
+    %div.sidebar
+      %ul
+        %li
+          Select an Engineer: 
+          %select#dropdown
+            - @engineerList.each do |engineer|
+              %option(value=engineer)
+                = engineer
+          %button#switchButton
+            Go
+        %li
+          Save All Changes
+
+    %div.monthBar
+      %a#previousMonth(href='#')
+        Previous
+      %h1#currentMonth
+        Month
+      %a#nextMonth(href='#')
+        Next
     %div.main
-      %div.monthBar
-        %a#previousMonth(href='#')
-          Previous
-        %h1#currentMonth
-          Month
-        %a#nextMonth(href='#')
-          Next
+      %table.scheduledEngineer
+        %tr
+          %th
+            %div.days#command
+              Assigned Engineer
+        %tr
+          %td
+            %div.content#e0
+              None
+        %tr
+          %td
+            %div.content#e1
+              None
+        %tr
+          %td
+            %div.content#e2
+              None
+        %tr
+          %td
+            %div.content#e3
+              None
+        %tr
+          %td
+            %div.content#e4
+              None
+
       %table.calander
         %tr
           %th
@@ -39,7 +79,7 @@
           %th
             %div.day
               Sa
-        %tr#row0s#mainrow
+        %tr#row0s
           %td
             %div.content#0x0
               0
@@ -149,33 +189,4 @@
           %td
             %div.content#4x6
               0
-      %table.scheduledEngineer
-        %th
-          %td
-            %div.day
-              Assigned Engineer
-        %tr
-          %td
-            %div.content#e0
-              Name
-        %tr
-          %td
-            %div.content#e1
-              Name
-        %tr
-          %td
-            %div.content#e2
-              Name
-        %tr
-          %td
-            %div.content#e3
-              Name
-        %tr
-          %td
-            %div.content#e4
-              Name
-    #side_bar
-      %h1 Side Bar
-      %p
-        This is the side bar of the webpage
     %script(src="scripts/myscript.js")

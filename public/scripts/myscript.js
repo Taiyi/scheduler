@@ -70,3 +70,9 @@ document.getElementById('nextMonth').onclick = function(){
 	activeMonthYear.setMonth(activeMonthYear.getMonth()+1)
 	fillCalander(activeMonthYear);
 };
+
+
+document.getElementById('switchButton').onclick = function(){
+	var selected = document.getElementById('dropdown').value;
+	document.getElementById('command').innerHTML = "Switch " + selected + " With:";
+};

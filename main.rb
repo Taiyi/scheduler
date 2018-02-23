@@ -2,7 +2,9 @@ require 'sinatra'
 require 'haml'
 require 'yaml'
 require 'date'
+require 'json'
 
+#rerun 'ruby main.rb'
 
 class Schedule
 	@schedule = YAML.load_file('schedule.yml')
@@ -29,6 +31,7 @@ def removeEntry(schedule)
 end
 
 get '/' do 
+	@engineerList = YAML.load_file('engineers.yml')['engineers']
 	haml :index 
 end
 
