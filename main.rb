@@ -6,9 +6,7 @@ require 'json'
 
 #rerun 'ruby main.rb'
 
-class Schedule
-	@schedule = YAML.load_file('schedule.yml')
-end
+$schedule = YAML.load_file('schedule.yml')
 
 def getEngineer()
 	#Returns a random engineer from engineers.yml.
@@ -35,6 +33,29 @@ get '/' do
 	haml :index 
 end
 
-get '/sdf' do 
-	"test" 
+get '/:target/:selected' do
+	@target = params[:target]
+	@selected = params[:selected]
+
+	@temp = $schedule[@target]
+
+	if $schedule.key?(@selected)
+		$schedule[@target] = $schedule[@selected]
+	else
+		$schedule.delete(@selected)
+	end
+
+	$schedule[@selected] = @temp
+
+	puts $schedule
+
+	status 204
+end
+
+get '/save' do
+	"hello world"
+end
+
+get '/revert' do
+	"hello world"
 end

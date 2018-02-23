@@ -71,8 +71,55 @@ document.getElementById('nextMonth').onclick = function(){
 	fillCalander(activeMonthYear);
 };
 
-
-document.getElementById('switchButton').onclick = function(){
-	var selected = document.getElementById('dropdown').value;
+document.getElementById('dropdown').onchange = function(){
+var selected = document.getElementById('dropdown').value;
+	if (selected == "---")
+	{
+		return;
+	}
 	document.getElementById('command').innerHTML = "Switch " + selected + " With:";
+
+	var entries = document.getElementsByClassName('engineerEntry');
+	var len = entries.length;
+
+	for (x=0; x<len; x++)
+	{
+		var entry = entries[x];
+		var week = entry.id[1];
+		var dayID = week+'x'+1;
+		var day = document.getElementById(dayID).innerHTML;
+		var month = activeMonthYear.getMonth();
+		var year = activeMonthYear.getFullYear();
+
+
+		entry.href = "/" + entry.innerHTML + "/" + selected  + "/" + year + "/" + month + "/" + day;
+	}
 };
+
+
+document.getElementById('dropdown').value = "---";
+var entries = document.getElementsByClassName('engineerEntry');
+var len = entries.length;
+for (x=0; x<len; x++)
+{
+	var entry = entries[x];
+	entry.addEventListener("click", function() {
+		var selected = document.getElementById('dropdown').value;
+		if (selected == "---")
+		{
+			return;
+		}
+		this.innerHTML = selected;
+		var href = this.href
+		document.getElementById('dropdown').value = "---";
+		document.getElementById('command').innerHTML = "Assigned Engineer";
+
+		var entries = document.getElementsByClassName('engineerEntry');
+		var len = entries.length;
+		for (x=0; x<len; x++){
+			var entry = entries[x];
+			entry.removeAttribute("href");
+		}
+		window.location = href; //removing href prevents link from working so force redirect
+	});
+}

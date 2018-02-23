@@ -75,18 +75,13 @@
 .scheduledEngineer {
   position: absolute;
   left: -12vw;
-  border: 1px solid black;
   width: 10vw;
 }
 
-.scheduledEngineer td .content {
+.scheduledEngineer td .engineerEntry {
   width: 5.6vw;
   height: 5.6vw;
   line-height: 5.6vw;
   text-align:center;
   float: right;
-}
-
-#switchButton {
-    padding: 0px 5px
 }

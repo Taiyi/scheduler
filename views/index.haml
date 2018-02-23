@@ -14,13 +14,17 @@
         %li
           Select an Engineer: 
           %select#dropdown
+            %option
+              \---
             - @engineerList.each do |engineer|
               %option(value=engineer)
                 = engineer
-          %button#switchButton
-            Go
         %li
-          Save All Changes
+          %a#save(href="/save")
+            Save All Changes
+        %li
+          %a#revert(href="/revert")
+            Revert All Changes
 
     %div.monthBar
       %a#previousMonth(href='#')
@@ -37,23 +41,23 @@
               Assigned Engineer
         %tr
           %td
-            %div.content#e0
+            %a.engineerEntry#e0
               None
         %tr
           %td
-            %div.content#e1
+            %a.engineerEntry#e1
               None
         %tr
           %td
-            %div.content#e2
+            %a.engineerEntry#e2
               None
         %tr
           %td
-            %div.content#e3
+            %a.engineerEntry#e3
               None
         %tr
           %td
-            %div.content#e4
+            %a.engineerEntry#e4
               None
 
       %table.calander
@@ -79,7 +83,7 @@
           %th
             %div.day
               Sa
-        %tr#row0s
+        %tr#row0
           %td
             %div.content#0x0
               0
