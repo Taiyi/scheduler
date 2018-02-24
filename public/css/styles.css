@@ -70,6 +70,7 @@
   bottom: 0;
   left: 0;
   right: 0;
+  word-wrap: break-word;
 }
 
 .scheduledEngineer {
@@ -84,4 +85,8 @@
   line-height: 5.6vw;
   text-align:center;
   float: right;
+}
+
+#save {
+    margin-bottom: 10px;
 }

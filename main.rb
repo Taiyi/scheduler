@@ -1,34 +1,10 @@
 require 'sinatra' 
 require 'haml'
 require 'yaml'
-require 'date'
-require 'json'
 require 'gon-sinatra'
 Sinatra::register Gon::Sinatra
 
-#rerun 'ruby main.rb'
-
 $schedule = YAML.load_file('schedule.yml')
-
-def getEngineer()
-	#Returns a random engineer from engineers.yml.
-	engineerList = YAML.load_file('engineers.yml')['engineers']
-	engineerList.sample
-end
-
-def getSchedule()
-	#Returns last saved schedule
-	YAML.load_file('schedule.yml')
-end
-
-def saveSchedule()
-	#Saves current schedule
-	File.open('schedule.yml', 'w') {|f| f.write d.to_yaml }
-end
-
-def removeEntry(schedule)
-	#removes entry from current schedule
-end
 
 get '/' do 
 	@engineerList = YAML.load_file('engineers.yml')['engineers']
@@ -48,12 +24,14 @@ get '/:target/:selected/:year/:month/:day' do
 
 	if @target == "None"
 		$schedule[@selected] = @dateArray
+	elsif @selected == "None"
+		$schedule.delete(@target)
 	else
 		@temp = $schedule[@target]
 		if $schedule.key?(@selected) 
 			$schedule[@target] = $schedule[@selected]
 		else
-			$schedule.delete(@selected)
+			$schedule.delete(@target)
 		end
 		$schedule[@selected] = @temp
 	end
@@ -66,6 +44,6 @@ get '/save' do
 	status 204
 end
 
-get '/revert' do
-	"hello world"
+get '/revert' do 
+	redirect "/", 303
 end
