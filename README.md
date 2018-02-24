@@ -35,5 +35,6 @@ Required gems:
 
 ## Deployment
 
-- App has additionally been deployed using Heroku
-- URL is https://shen-jared-scheduler.herokuapp.com/
+- App has additionally been deployed using Heroku.
+- URL is https://shen-jared-scheduler.herokuapp.com/.
+- JavaScript does not currently work on Heroku.
