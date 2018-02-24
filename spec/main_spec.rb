@@ -1,8 +1,7 @@
 require 'spec_helper'
-require File.join(File.expand_path(".."), 'Scheduler/main.rb')
+require File.join(File.dirname(".."), 'main.rb')
 
 #run with command 'rspec spec' while in root folder
-#root folder must be named Scheduler
 
 describe "Schedule" do 
    context "when testing scheduler, function" do 
