@@ -2,4 +2,3 @@ source 'https://rubygems.org'
 gem "sinatra"
 gem "haml"
 gem "gon-sinatra"
-gem "rake"
