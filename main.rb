@@ -6,7 +6,6 @@ Sinatra::register Gon::Sinatra
 
 def resetSchedule()
    $schedule = {}
-   saveSchedule($schedule)
 end
 
 def getSchedule()
@@ -58,7 +57,7 @@ get '/:target/:selected/:year/:month/:day' do
 	elsif selected == "None"
 		deleteEngineer($schedule, target)
 	elsif  target != "None" and selected != "None"
-		switchEngineers($schedule, target, selected, year, month, day)
+		switchEngineers($schedule, target, selected)
 	end
 
 	status 204

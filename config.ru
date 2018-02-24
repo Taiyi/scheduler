@@ -1,9 +1,8 @@
 require "./main"
 
-map "/public" do
- run Rack::Directory.new("./public")
-end
+set :public_folder, File.join(File.dirname(__FILE__), "public")
 
-set :public_folder, File.join(APP_ROOT, "public")
 
-run Sinatra::Application
+use Rack::Static, :urls => ["/public"]
+
+Sinatra::Application.run!
