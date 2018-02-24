@@ -1,5 +1,5 @@
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     gon-sinatra (0.1.2)
       sinatra
@@ -10,6 +10,7 @@ GEM
     rack (2.0.4)
     rack-protection (2.0.1)
       rack
+    rake (12.3.0)
     sinatra (2.0.1)
       mustermann (~> 1.0)
       rack (~> 2.0)
@@ -24,6 +25,7 @@ PLATFORMS
 DEPENDENCIES
   gon-sinatra
   haml
+  rake
   sinatra
 
 BUNDLED WITH
